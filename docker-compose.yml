@@ -10,7 +10,6 @@ services:
       - "8080:8080"
     networks:
       - entry
-      - sub-1
 
   web-thinkphp:
     # build: ./web-thinkphp
@@ -65,7 +64,6 @@ services:
     volumes:
       - ./flag/web-struts2.txt:/flag.txt:ro
     networks:
-      - entry
       - sub-2
 
   db-postgresql:
@@ -77,8 +75,6 @@ services:
       - ./flag/db-postgresql.sql:/docker-entrypoint-initdb.d/schema.sql:ro
     networks:
       - sub-2
-  
-  
 
 networks:
   entry:
