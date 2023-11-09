@@ -14,7 +14,7 @@
 
 本靶机漏洞编号为：CVE-2016-4437，即 Apache Shiro 1.2.4 反序列化漏洞
 
-环境使用 Vulhub 的示例环境：[vulhub/shiro/CVE-2016-4437 - Github](https://github.com/vulhub/vulhub/tree/master/shiro/CVE-2016-4437)
+环境参考 Vulhub 的示例环境：[vulhub/shiro/CVE-2016-4437 - Github](https://github.com/vulhub/vulhub/tree/master/shiro/CVE-2016-4437)，并针对多层内网的渗透场景，为了降低难度，而额外增加了以下软件包：python3 net-tools curl wget
 
 可以直接使用 Metasploit、Shiro 反序列化工具等直接进行攻击，并反弹 shell，flag 位于 `/flag` 中
 
@@ -22,7 +22,7 @@
 
 本靶机漏洞为：ThinkPHP5 5.0.22/5.1.29 远程代码执行漏洞
 
-环境使用 Vulhub 的示例环境：[vulhub/thinkphp/5-rce - Github](https://github.com/vulhub/vulhub/blob/master/thinkphp/5-rce/README.zh-cn.md)
+环境参考 Vulhub 的示例环境：[vulhub/thinkphp/5-rce - Github](https://github.com/vulhub/vulhub/blob/master/thinkphp/5-rce/README.zh-cn.md)，并针对多层内网的渗透场景，为了降低难度，而额外增加了以下软件包：python3 net-tools curl wget
 
 可以直接使用 ThinkPHP RCE 工具等直接进行攻击，并反弹 shell，flag 位于 `/flag` 中
 
