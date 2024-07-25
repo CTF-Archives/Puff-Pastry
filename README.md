@@ -1,5 +1,7 @@
 # Puff-Pastry
 
+复现过程 [Puff-Pastry | Target Machines WriteUp](https://tryhackmyoffsecbox.github.io/Target-Machines-WriteUp/docs/Independent-Environment/Puff-Pastry/)
+
 ## 环境部署注意事项
 
 > 由于在 docker-compose.yml 文件中指定了网络网段，所以如果发生网段冲突，请手动修改 docker-compose.yml 中各个网络的网段设置
