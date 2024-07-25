@@ -36,13 +36,11 @@
 
 ### service-phpmyadmin
 
-本服务由两个靶机构成：`web-phpmyadmin` + `db-mysql`
+本服务为一个正常的 phpmyadmin 服务，mysql 的凭据为 `root:root`，可以使用常规的漏扫发现出来
 
-本服务为一个正常的 phpmyadmin 服务，mysql 的凭据为 `root:123456`，可以使用常规的漏扫发现出来
+数据库的主机名为 `localhost`
 
-数据库的主机名为 `db-mysql`，可以通过目录扫描，在 `/robots.txt` 里面得到
-
-连接到 phpmyadmin 的后台，通过日志的方式写入 webshell，即可反弹出来 shell，进行后续操作，flag 位于数据库内
+连接到 phpmyadmin 的后台，通过日志的方式写入 webshell，即可反弹出来 shell，进行后续操作，flag 位于数据库内，以及`/flag`
 
 ### web-struts2
 
