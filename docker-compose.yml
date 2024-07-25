@@ -1,4 +1,4 @@
-version: "2"
+version: "4.5"
 services:
   web-shiro:
     # build: ./web-shiro
@@ -12,13 +12,11 @@ services:
       - entry
 
   web-thinkphp:
-    # build: ./web-thinkphp
-    image: ctfarchives/puff-pastry-web-thinkphp:latest
+    build: ./web-thinkphp
+    # image: ctfarchives/puff-pastry-web-thinkphp:latest
     restart: always
     volumes:
       - ./flag/web-thinkphp.txt:/flag.txt:ro
-    ports:
-      - "8081:80"
     networks:
       - entry
       - sub-1
@@ -33,30 +31,17 @@ services:
 
   web-phpmyadmin:
     build: ./web-phpmyadmin
-    links:
-      - db-mysql
     restart: always
     volumes:
       - ./flag/web-phpmyadmin.txt:/flag.txt:ro
+      - ./flag/db-mysql.sql:/var/db.sql:ro
     environment:
-      PMA_HOST: db-mysql
+      PMA_HOST: 127.0.0.1
       PMA_PORT: 3306
       PMA_ARBITRARY: 1
     networks:
       - sub-1
       - sub-2
-      - phpmyadmin
-
-  db-mysql:
-    build: ./db-mysql
-    container_name: db-mysql
-    environment:
-      MYSQL_ROOT_PASSWORD: 123456
-      MYSQL_DATABASE: app_db
-    volumes:
-      - ./flag/db-mysql.sql:/docker-entrypoint-initdb.d/schema.sql:ro
-    networks:
-      - phpmyadmin
 
   web-struts2:
     build: ./web-struts2
@@ -96,7 +81,3 @@ networks:
     ipam:
       config:
         - subnet: 172.56.102.0/24
-
-  phpmyadmin:
-    driver: bridge
-    internal: true
